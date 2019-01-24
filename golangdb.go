@@ -75,7 +75,7 @@ func main() {
 	fmt.Println()
 
 	fmt.Println("----- Named -----")
-	rows, err = Db.Query(`SELECT * FROM members WHERE id = :tanaka`, sql.Named("tanaka", 1))
+	rows, err = Db.Query(`SELECT * FROM members WHERE id = @id`, sql.Named("id", "1"))
 	fmt.Println(err)
 	if err != nil {
 		return
